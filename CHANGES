@@ -1,3 +1,7 @@
+===== 1.1.0 (2018-03-30) =====
+
+  * Initial release packaged separately from Lwt.
+
 ===== Lwt 3.2.0 (2017-12-19) =====
 
 ====== Planned to break in Lwt 4.0.0 ======
