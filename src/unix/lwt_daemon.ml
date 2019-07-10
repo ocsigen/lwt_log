@@ -61,7 +61,7 @@ let daemonize ?(syslog=true) ?(stdin=`Dev_null) ?(stdout=`Log_default) ?(stderr=
   (* Exit the parent, and continue in the child: *)
   if Lwt_unix.fork () > 0 then begin
     (* Do not run exit hooks in the parent. *)
-    Lwt_sequence.iter_node_l Lwt_sequence.remove Lwt_main.exit_hooks;
+    Lwt_sequence.iter_node_l Lwt_sequence.remove Lwt_main.exit_hooks [@ocaml.warning "-3"];
     exit 0
   end;
 
