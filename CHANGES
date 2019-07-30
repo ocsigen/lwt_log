@@ -1,3 +1,8 @@
+===== 1.1.1 (2019-07-30) =====
+
+  * Upgrade from Jbuilder to Dune (#3, Rudi Grinberg).
+  * Update license headers (#2, Ben Rosser).
+
 ===== 1.1.0 (2018-03-30) =====
 
   * Initial release packaged separately from Lwt.
