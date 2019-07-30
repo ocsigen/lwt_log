@@ -18,6 +18,7 @@ dev-repo: "git+https://github.com/ocsigen/lwt_log.git"
 depends: [
   "dune"
   "lwt" {>= "4.0.0"}
+  "ocaml"
 ]
 
 build: [
