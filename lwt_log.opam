@@ -1,17 +1,19 @@
-opam-version: "1.2"
+opam-version: "2.0"
+
+synopsis: "Lwt logging library (deprecated)"
 
 version: "dev"
+license: "LGPL"
 homepage: "https://github.com/ocsigen/lwt_log"
 doc: "https://github.com/ocsigen/lwt_log/blob/master/src/core/lwt_log_core.mli"
 bug-reports: "https://github.com/ocsigen/lwt_log/issues"
-license: "LGPL"
 
 authors: [
   "Shawn Wagner"
   "Jérémie Dimino"
 ]
 maintainer: "Anton Bachin <antonbachin@yahoo.com>"
-dev-repo: "https://github.com/ocsigen/lwt_log.git"
+dev-repo: "git+https://github.com/ocsigen/lwt_log.git"
 
 depends: [
   "dune" {build}
