@@ -14,10 +14,10 @@ maintainer: "Anton Bachin <antonbachin@yahoo.com>"
 dev-repo: "https://github.com/aantron/lwt_log.git"
 
 depends: [
-  "jbuilder" {build & >= "1.0+beta10"}
+  "dune" {build & >= "1.0"}
   "lwt" {>= "4.0.0"}
 ]
 
 build: [
-  ["jbuilder" "build" "-p" name "-j" jobs]
+  ["dune" "build" "-p" name "-j" jobs]
 ]
