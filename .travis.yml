@@ -8,7 +8,7 @@ env:
   - COMPILER=4.05.0
   - COMPILER=4.06.1
   - COMPILER=4.07.1
-  - COMPILER=4.08.0
+  - COMPILER=4.08.1
 
 before_script:
   - set -e
