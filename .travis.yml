@@ -2,30 +2,40 @@ sudo: required
 language: generic
 
 env:
-  - COMPILER=4.02.3
-  - COMPILER=4.03.0
-  - COMPILER=4.04.2
-  - COMPILER=4.05.0
-  - COMPILER=4.06.1
-  - COMPILER=4.07.1
+  - COMPILER=4.09.0
   - COMPILER=4.08.1
+  - COMPILER=4.07.1
+  - COMPILER=4.06.1
+  - COMPILER=4.05.0
+  - COMPILER=4.04.2
+  - COMPILER=4.03.0
+  - COMPILER=4.02.3
 
-before_script:
-  - set -e
+before_install:
+  - '[ "$TRAVIS_EVENT_TYPE" != cron ] || rm -rf ~/.opam'
+
+install:
   - wget https://github.com/ocaml/opam/releases/download/2.0.5/opam-2.0.5-x86_64-linux
   - sudo mv opam-2.0.5-x86_64-linux /usr/local/bin/opam
   - sudo chmod a+x /usr/local/bin/opam
-  - opam init -y --bare --disable-sandboxing --disable-shell-hook
-  - "opam switch create . $COMPILER $REPOSITORIES --no-install"
+
+  - opam init -ya --compiler=$COMPILER --disable-sandboxing --disable-shell-hook
   - eval `opam config env`
   - opam --version
   - ocaml -version
-  - opam pin add --yes --no-action lwt_log .
-  - opam install --yes --deps-only lwt_log
+
+  - opam install --yes --deps-only .
 
 script:
-  - make
+  - dune build
   - opam lint
+
+before_cache:
+  - opam clean
+
+cache:
+  directories:
+    - $HOME/.opam
 
 notifications:
   email:
