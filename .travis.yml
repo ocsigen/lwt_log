@@ -2,6 +2,7 @@ sudo: required
 language: generic
 
 env:
+  - COMPILER=4.10.0
   - COMPILER=4.09.0
   - COMPILER=4.08.1
   - COMPILER=4.07.1
