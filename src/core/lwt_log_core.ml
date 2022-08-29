@@ -47,7 +47,7 @@ let string_of_level = function
   | Fatal -> "fatal"
 
 let level_of_string str =
-  let str = (String.lowercase [@ocaml.warning "-3"]) str in
+  let str = String.lowercase_ascii str in
   match str with
   | "debug" -> Some Debug
   | "info" -> Some Info
